@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MiradorLegislativoApp.ViewControllerPickerPartido.viewDidLoad (MiradorLegislativoApp.ViewControllerPickerPartido)() -&gt; ():ViewControllerPickerPartido.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MiradorLegislativoApp.TableViewControllerComisiones.tableView (MiradorLegislativoApp.TableViewControllerComisiones)(ObjectiveC.UITableView, numberOfRowsInSection : Swift.Int) -&gt; Swift.Int:TableViewControllerComisiones.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MiradorLegislativoApp.ViewControllerPickerSesion.viewDidLoad (MiradorLegislativoApp.ViewControllerPickerSesion)() -&gt; ():ViewControllerPickerSesion.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MiradorLegislativoApp.ViewController.prepareForSegue (MiradorLegislativoApp.ViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MiradorLegislativoApp.ViewControllerPickerSesion.prepareForSegue (MiradorLegislativoApp.ViewControllerPickerSesion)(ObjectiveC.UIStoryboardSegue, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ():ViewControllerPickerSesion.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MiradorLegislativoApp.ViewControllerFilterProject.prepareForSegue (MiradorLegislativoApp.ViewControllerFilterProject)(ObjectiveC.UIStoryboardSegue, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ():ViewControllerFilterProject.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
