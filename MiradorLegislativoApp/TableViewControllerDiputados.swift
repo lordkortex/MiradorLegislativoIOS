@@ -38,7 +38,7 @@ class TableViewControllerDiputados: UITableViewController, UISearchBarDelegate, 
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         //elf.navigationController?.navigationBar.titleTextAttributes = titleDict! as NSDictionary
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        
+        //Pendiente el cambio de color
         
         /*    self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]*/
     }
