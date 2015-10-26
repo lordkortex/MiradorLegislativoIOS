@@ -12,10 +12,21 @@ class TableViewControllerIntervenciones: UITableViewController {
 
     var arrayOfXmlIntervenciones :[XmlIntervenciones] = [XmlIntervenciones]()
     var id_sesion_proyecto = NSString()
+    var imageCache = [String:UIImage]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
     }
+    
+    func configureTableView() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 80.0
+    }
+    
+    
+
     
     override func viewDidAppear(animated: Bool) {
         self.navigationController?.navigationBar.topItem?.title = "Intervenciones"
@@ -45,24 +56,60 @@ class TableViewControllerIntervenciones: UITableViewController {
         return arrayOfXmlIntervenciones.count
     }
     
-    override func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat
-    {
-        return 150
-    }
-    
+       
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        let cell : TableViewControllerIntervencionesCellP = tableView.dequeueReusableCellWithIdentifier("IntervencionCell", forIndexPath: indexPath) as! TableViewControllerIntervencionesCellP
+       /* let cell : TableViewControllerIntervencionesCellP = tableView.dequeueReusableCellWithIdentifier("IntervencionCell", forIndexPath: indexPath) as! TableViewControllerIntervencionesCellP*/
         
        let intervencion = arrayOfXmlIntervenciones[indexPath.row]
         
-        cell.labelDiputado.text = intervencion.diputado_nombre
-        cell.labelPartido.text = intervencion.partido_nombre
-        cell.labelFecha.text = intervencion.intervencion_fecha_creacion
-        cell.LabelDescripcion.text = intervencion.proyecto_nombre
-        cell.LabelDetalle.text = intervencion.intervencion_texto
-        cell.LabelDetalle.lineBreakMode = .ByWordWrapping ;
+          
+        
+        let cell : ImageCellDiputado = tableView.dequeueReusableCellWithIdentifier("ImageCellDiputado", forIndexPath: indexPath) as! ImageCellDiputado
+        
+        
+        var urlString: NSString = intervencion.diputado_imagen as NSString
+        
+        if(urlString.length > 10){
+            var imgURL  = NSURL(string: urlString as String)
+            
+            cell.imageDiputado.image = UIImage(named: "ico_diputados")
+            
+            if let img = imageCache[urlString as String] {
+                cell.imageDiputado.image = img
+            }
+            else {
+                let request: NSURLRequest = NSURLRequest(URL: imgURL!)
+                let mainQueue = NSOperationQueue.mainQueue()
+                NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+                    if error == nil {
+                        let image = UIImage(data: data!)
+                        self.imageCache[urlString as String] = image
+                        dispatch_async(dispatch_get_main_queue(), {
+                            //if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                            cell.imageDiputado.image = image
+                            //}
+                        })
+                    }
+                    else {
+                        print("Error: \(error!.localizedDescription)")
+                    }
+                })
+            }
+            
+            
+        }else{
+            cell.imageDiputado.image = UIImage(named: "ico_diputados")
+            
+        }
+        
+        
+        cell.titleDiputado.text = intervencion.diputado_nombre
+        cell.label1.text = intervencion.partido_nombre
+        cell.label2.text = intervencion.intervencion_fecha_creacion
+        cell.label3.text = intervencion.proyecto_nombre
+        cell.subtitleDiputado.text = intervencion.intervencion_texto
         
         
         

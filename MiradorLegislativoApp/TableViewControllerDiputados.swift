@@ -26,6 +26,12 @@ class TableViewControllerDiputados: UITableViewController, UISearchBarDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.reloadData()
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 160.0
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -87,7 +93,10 @@ class TableViewControllerDiputados: UITableViewController, UISearchBarDelegate, 
     
     override func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat
     {
-        return 100
+        
+        //if tableView == self.searchDisplayController!.searchResultsTableView {
+            return 100
+        //}
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -138,9 +147,59 @@ class TableViewControllerDiputados: UITableViewController, UISearchBarDelegate, 
         
         return cell
         
+        //return imageCellAtIndexPath(indexPath)
+        
         
         
     }
+    
+    func imageCellAtIndexPath(indexPath:NSIndexPath) -> ImageCellDiputado {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("ImageCellDiputado") as! ImageCellDiputado
+        
+        
+        var diputado : XmlProponentes
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            diputado = arrayOfXmlProponenteResuls[indexPath.row]
+        } else {
+            diputado = arrayOfXmlProponente[indexPath.row]
+        }
+        
+        
+        var urlString: NSString = diputado.diputado_imagen as NSString
+        var imgURL  = NSURL(string: urlString as String)
+        
+        cell.imageDiputado.image = UIImage(named: "ico_diputados")
+        
+        if let img = imageCache[urlString as String] {
+            cell.imageDiputado.image = img
+        }
+        else {
+            let request: NSURLRequest = NSURLRequest(URL: imgURL!)
+            let mainQueue = NSOperationQueue.mainQueue()
+            NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data: data!)
+                    self.imageCache[urlString as String] = image
+                    dispatch_async(dispatch_get_main_queue(), {
+                        //if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                            cell.imageDiputado.image = image
+                        //}
+                    })
+                }
+                else {
+                    print("Error: \(error!.localizedDescription)")
+                }
+            })
+        }
+
+        
+        cell.titleDiputado.text = diputado.diputado_nombre
+        cell.subtitleDiputado.text = diputado.partido_nombre
+
+        
+        return cell
+    }
+
     
     
     

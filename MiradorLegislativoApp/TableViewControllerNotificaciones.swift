@@ -15,6 +15,12 @@ class TableViewControllerNotificaciones: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 80.0
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,24 +50,26 @@ class TableViewControllerNotificaciones: UITableViewController {
         return arrayOfXmlIntervenciones.count
     }
     
-    override func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat
+    /*override func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat
     {
         return 150
-    }
+    }*/
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell : TableViewControllerNotificacionesCell = tableView.dequeueReusableCellWithIdentifier("NotificacionCell", forIndexPath: indexPath) as! TableViewControllerNotificacionesCell
-        
+      
         let notificacion = arrayOfXmlIntervenciones[indexPath.row]
         
-        cell.labelDiputado.text = notificacion.diputado_nombre
-        cell.labelPartido.text = notificacion.partido_nombre
-        cell.labelFecha.text = notificacion.intervencion_fecha_creacion
-        cell.labelEncabezado.text = notificacion.proyecto_nombre
-        cell.labelDescripcion.text = notificacion.intervencion_texto
+        let cell : ImageCellDiputado = tableView.dequeueReusableCellWithIdentifier("ImageCellDiputado", forIndexPath: indexPath) as! ImageCellDiputado
         
-        return cell
+        cell.titleDiputado.text = notificacion.diputado_nombre
+        cell.label1.text = notificacion.partido_nombre
+        cell.label2.text = notificacion.intervencion_fecha_creacion
+        cell.label3.text = notificacion.proyecto_nombre
+        cell.subtitleDiputado.text = notificacion.intervencion_texto
+        
+        
+         return cell
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

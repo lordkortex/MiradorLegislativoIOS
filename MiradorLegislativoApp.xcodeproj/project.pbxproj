@@ -28,6 +28,7 @@
 		0450084C1B6318BF00B73F44 /* TableViewControllerComisionesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450084B1B6318BF00B73F44 /* TableViewControllerComisionesCell.swift */; };
 		0450084E1B6318D000B73F44 /* TableViewControllerNotificacionesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450084D1B6318D000B73F44 /* TableViewControllerNotificacionesCell.swift */; };
 		045594641B687C8800219F87 /* TableViewControllerDiputadoCellP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045594631B687C8800219F87 /* TableViewControllerDiputadoCellP.swift */; };
+		046488A51BDDC19400549491 /* ImageCellDiputado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046488A41BDDC19300549491 /* ImageCellDiputado.swift */; settings = {ASSET_TAGS = (); }; };
 		046610BA1B61F4FA0035CEC6 /* TableViewControllerIntervenciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046610B91B61F4FA0035CEC6 /* TableViewControllerIntervenciones.swift */; };
 		046610BC1B61F52E0035CEC6 /* TableViewControllerIntervencionesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046610BB1B61F52E0035CEC6 /* TableViewControllerIntervencionesCell.swift */; };
 		046610CA1B62C6690035CEC6 /* XmlSesiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046610C91B62C6690035CEC6 /* XmlSesiones.swift */; };
@@ -99,6 +100,7 @@
 		0450084B1B6318BF00B73F44 /* TableViewControllerComisionesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerComisionesCell.swift; sourceTree = "<group>"; };
 		0450084D1B6318D000B73F44 /* TableViewControllerNotificacionesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerNotificacionesCell.swift; sourceTree = "<group>"; };
 		045594631B687C8800219F87 /* TableViewControllerDiputadoCellP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerDiputadoCellP.swift; sourceTree = "<group>"; };
+		046488A41BDDC19300549491 /* ImageCellDiputado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCellDiputado.swift; sourceTree = "<group>"; };
 		046610B91B61F4FA0035CEC6 /* TableViewControllerIntervenciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerIntervenciones.swift; sourceTree = "<group>"; };
 		046610BB1B61F52E0035CEC6 /* TableViewControllerIntervencionesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerIntervencionesCell.swift; sourceTree = "<group>"; };
 		046610C91B62C6690035CEC6 /* XmlSesiones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlSesiones.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				045008471B63189800B73F44 /* TableViewControllerDiputadosCell.swift */,
 				045008491B6318AD00B73F44 /* TableViewControllerPartidosCell.swift */,
 				045594631B687C8800219F87 /* TableViewControllerDiputadoCellP.swift */,
+				046488A41BDDC19300549491 /* ImageCellDiputado.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				046610CA1B62C6690035CEC6 /* XmlSesiones.swift in Sources */,
 				04DC289B1B61ACFE00C508A6 /* TableViewControllerSesiones.swift in Sources */,
 				04BD02651B644CD600478190 /* ViewControllerDashboardPartidos.swift in Sources */,
+				046488A51BDDC19400549491 /* ImageCellDiputado.swift in Sources */,
 				0413DBE71BA8B97A00340751 /* ModelParser.swift in Sources */,
 				046610D81B62C6DB0035CEC6 /* XmlPartidos.swift in Sources */,
 				04FDFE591B6DE5440082A090 /* TableViewControllerDiputados.swift in Sources */,

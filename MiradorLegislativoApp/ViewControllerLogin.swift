@@ -185,7 +185,7 @@ class ViewControllerLogin: UIViewController  , NSURLConnectionDelegate, NSXMLPar
             //Variables.arrayOfXmlDebates = ModelStructParser.arrayOfXmlDebates
             arrayOfObjectsData = NSKeyedArchiver.archivedDataWithRootObject(ModelStructParser.arrayOfXmlDebates)
             prefs.setObject(arrayOfObjectsData, forKey: Variables.arrayOfXmlDebatesName)
-             
+              
             //Variables.arrayOfXmlIntervenciones = ModelStructParser.arrayOfXmlIntervenciones
             arrayOfObjectsData = NSKeyedArchiver.archivedDataWithRootObject(ModelStructParser.arrayOfXmlIntervenciones)
             prefs.setObject(arrayOfObjectsData, forKey: Variables.arrayOfXmlIntervencionesName)

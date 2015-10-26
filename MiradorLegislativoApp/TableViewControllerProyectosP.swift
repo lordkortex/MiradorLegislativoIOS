@@ -17,17 +17,17 @@ class TableViewControllerProyectosP: UITableViewController {
     var sesionFechaP = NSString()
     
     
-    
-   
-
-    
-    
-    override func viewDidLoad() {
+   override func viewDidLoad() { 
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 300
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        configureTableView()
     }
+    
+    func configureTableView() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 140.0
+    }
+    
+
     
     
     override func viewDidAppear(animated: Bool) {
@@ -58,12 +58,6 @@ class TableViewControllerProyectosP: UITableViewController {
         return arrayOfXmlProyectosP.count
     }
     
-   override func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat
-    {
-        return 250
-        //return UITableViewAutomaticDimension;
-        
-    }
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
     
@@ -71,27 +65,26 @@ class TableViewControllerProyectosP: UITableViewController {
         
     }
     
-    func configureTableView() {
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 160.0
-    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : TableViewControllerProyectosCell = tableView.dequeueReusableCellWithIdentifier("ProyectoCell", forIndexPath: indexPath) as! TableViewControllerProyectosCell
+       
+        /*let cell : TableViewControllerProyectosCell = tableView.dequeueReusableCellWithIdentifier("ProyectoCell", forIndexPath: indexPath) as! TableViewControllerProyectosCell*/
         
         let proyecto = arrayOfXmlProyectosP[indexPath.row]
         
-        cell.LabelNombre.text = proyecto.proyecto_nombre
-        cell.LabelTipoActo.text = proyecto.legislacion_nombre
-        cell.LabelProponente.text = proyecto.diputado_nombre
-        cell.LabelSesion.text = proyecto.fecha_creacion
-        cell.LabelStatus.text = proyecto.status_nombre
-        cell.LabelPrimerDebate.text = proyecto.tipo_debate_nombre
-        cell.LabelDescripcion.text = proyecto.proyecto_descripcion
-        cell.LabelDescripcion.lineBreakMode = .ByWordWrapping ;
+        let cell : ImageCellDiputado = tableView.dequeueReusableCellWithIdentifier("ImageCellDiputado", forIndexPath: indexPath) as! ImageCellDiputado
+        
+        cell.titleDiputado.text = proyecto.proyecto_nombre
+        cell.label1.text = "Tipo de Acto: " + proyecto.legislacion_nombre
+        cell.label2.text = "Proponente: " + proyecto.diputado_nombre
+        cell.label3.text = "Sesion de Fecha: " + proyecto.fecha_creacion
+        cell.label4.text = "Estatus: " + proyecto.status_nombre
+        cell.label5.text = proyecto.tipo_debate_nombre
+        cell.subtitleDiputado.text = proyecto.proyecto_descripcion
+        
         
         return cell
-    }
+    } 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }

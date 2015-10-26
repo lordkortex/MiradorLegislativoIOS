@@ -20,7 +20,7 @@ class XmlProyectos : NSObject, NSCoding {
     var diputado_nombre = ""
     var comision_dictaminadora_nombre = ""
     var status_nombre = ""
-    var fecha_creacion = ""
+    var fecha_creacion = "" 
     var tipo_debate_nombre = ""
     var partido_nombre = ""
     var proyecto_descripcion = ""
@@ -68,6 +68,7 @@ class XmlProyectos : NSObject, NSCoding {
         self.legislacion_nombre = decoder.decodeObjectForKey("legislacion_nombre") as! String
         self.diputado_nombre = decoder.decodeObjectForKey("diputado_nombre") as! String
         self.comision_dictaminadora_nombre = decoder.decodeObjectForKey("comision_dictaminadora_nombre") as! String
+        self.status_nombre = decoder.decodeObjectForKey("status_nombre") as! String
         self.fecha_creacion = decoder.decodeObjectForKey("fecha_creacion") as! String
         self.tipo_debate_nombre = decoder.decodeObjectForKey("tipo_debate_nombre") as! String
         self.partido_nombre = decoder.decodeObjectForKey("partido_nombre") as! String
@@ -84,6 +85,7 @@ class XmlProyectos : NSObject, NSCoding {
         coder.encodeObject(self.legislacion_nombre, forKey: "legislacion_nombre")
         coder.encodeObject(self.diputado_nombre, forKey: "diputado_nombre")
         coder.encodeObject(self.comision_dictaminadora_nombre, forKey: "comision_dictaminadora_nombre")
+        coder.encodeObject(self.status_nombre, forKey: "status_nombre")
         coder.encodeObject(self.fecha_creacion, forKey: "fecha_creacion")
         coder.encodeObject(self.tipo_debate_nombre, forKey: "tipo_debate_nombre")
         coder.encodeObject(self.partido_nombre, forKey: "partido_nombre")
