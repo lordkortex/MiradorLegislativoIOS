@@ -16,6 +16,7 @@ class ModelParser {
     
     init() {
         // perform some initialization here
+        
     }
     
 

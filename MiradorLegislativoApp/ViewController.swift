@@ -198,7 +198,8 @@ class ViewController: UIViewController , NSURLConnectionDelegate, NSXMLParserDel
         
         if (segue.identifier == "gotoLogin") {
             let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            prefs.setObject("", forKey: "USERNAME")
+            prefs.setObject("", forKey: Variables.username)
+            prefs.setObject("", forKey: Variables.password)
             prefs.setInteger(1, forKey: "ISLOGGEDIN")
             prefs.synchronize()
             

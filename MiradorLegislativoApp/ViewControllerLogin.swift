@@ -30,6 +30,18 @@ class ViewControllerLogin: UIViewController  , NSURLConnectionDelegate, NSXMLPar
     
     @IBAction func login(sender: UIButton) {
         
+        //Temporalmente
+        /*let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let username:NSString = textUserName.text!
+        let password:NSString = textPassword.text!
+        prefs.setValue(username, forKey: "USERNAME")
+        prefs.setValue(password, forKey: "PASSWORD")
+        prefs.setInteger(0, forKey: "ISLOGGEDIN")
+        prefs.synchronize()
+        self.dismissViewControllerAnimated(true, completion: nil)*/
+        
+        
+      
         
         
         let username:NSString = textUserName.text!
@@ -51,8 +63,6 @@ class ViewControllerLogin: UIViewController  , NSURLConnectionDelegate, NSXMLPar
             self.contador = 30;
             let fractionalProgress = Float(self.contador) / 100.0
             progressView.setProgress(fractionalProgress, animated: true)
-            
-            //NSLog("Response First ==> %@", self.contador);
             
             for i in 0..<100 {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
@@ -95,10 +105,20 @@ class ViewControllerLogin: UIViewController  , NSURLConnectionDelegate, NSXMLPar
             
             if (connection == true) {
                 var mutableData : Void = NSMutableData.initialize()
+            }else{
+                
+                /*let alertView:UIAlertView = UIAlertView()
+                alertView.title = "Sign in Failed!"
+                alertView.message = "En estos momentos no tienes conexion!!"
+                alertView.delegate = self
+                alertView.addButtonWithTitle("OK")
+                alertView.show()*/
+
             }
             
         }
         
+            
         
     }
     
@@ -151,16 +171,35 @@ class ViewControllerLogin: UIViewController  , NSURLConnectionDelegate, NSXMLPar
         
         //[jsonData[@"success"] integerValue];
         
+        
         NSLog("Success: %ld", success);
         
         if ModelStructParser.arrayOfXmlProyectos.count > 0 {
             
             NSLog("Login SUCCESS");
             
+            let username:NSString = textUserName.text!
+            let password:NSString = textPassword.text!
+            
             let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            prefs.setObject("", forKey: "USERNAME")
+            //prefs.setObject(username, forKey: Variables.username)
+            //prefs.setObject(password, forKey: Variables.password)
+            
+            let dictionaryUser: NSDictionary = [Variables.username:username]
+            let dictionaryPassword: NSDictionary = [Variables.password:password]
+            
+            NSUserDefaults.standardUserDefaults().setObject(dictionaryUser, forKey: Variables.username)
+            NSUserDefaults.standardUserDefaults().setObject(dictionaryPassword, forKey: Variables.password)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            
             prefs.setInteger(0, forKey: "ISLOGGEDIN")
             prefs.synchronize()
+            
+            /*NSUserDefaults.standardUserDefaults().setObject(username, forKey: "USERNAME")
+            NSUserDefaults.standardUserDefaults().setObject(password, forKey: "PASSWORD")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "ISLOGGEDIN")
+            NSUserDefaults.standardUserDefaults().synchronize()*/
             
             
             Variables.user = textUserName.text!

@@ -41,6 +41,8 @@ struct Variables {
     static var  arrayOfXmlStatusName = "arrayOfXmlStatus"
     static var  arrayOfXmlTipoActosName = "arrayOfXmlTipoActos"
     
-     
+    static var  username = "username"
+    static var  password = "password"
+    
     
 }

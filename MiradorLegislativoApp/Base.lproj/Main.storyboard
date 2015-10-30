@@ -1189,10 +1189,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCellDiputado" rowHeight="180" id="Ko1-zW-qZl" customClass="ImageCellDiputado" customModule="MiradorLegislativoApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="141"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ko1-zW-qZl" id="qpM-VI-gIj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="hBJ-al-dKw">
@@ -1211,9 +1211,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="83" y="77" width="489" height="15"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="172" placeholderIntrinsicHeight="18" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c5-wC-QUf">
                                             <rect key="frame" x="128" y="44" width="172" height="18"/>
@@ -1229,36 +1226,24 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="83" y="49" width="504" height="15"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJf-ww-rnU">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="83" y="32" width="504" height="15"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iji-aV-4lg">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="83" y="88" width="42" height="21"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWu-gc-4qD">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="83" y="111" width="42" height="21"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="172" placeholderIntrinsicHeight="21" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-Nt-MAa">
                                             <rect key="frame" x="128" y="20" width="172" height="21"/>
@@ -1327,9 +1312,6 @@
                                             <exclude reference="uWu-gc-4qD"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="3B3-pB-sfv"/>
-                                            <exclude reference="RbD-Vn-oxI"/>
-                                            <exclude reference="l6W-cj-yg4"/>
                                             <exclude reference="2rD-lT-aa3"/>
                                             <exclude reference="HTh-MQ-eXd"/>
                                             <exclude reference="KgH-QY-eKi"/>
@@ -1341,6 +1323,9 @@
                                             <exclude reference="UZa-6B-eeK"/>
                                             <exclude reference="XwO-B2-2kF"/>
                                             <exclude reference="ZDi-6j-Ve9"/>
+                                            <exclude reference="3B3-pB-sfv"/>
+                                            <exclude reference="RbD-Vn-oxI"/>
+                                            <exclude reference="l6W-cj-yg4"/>
                                             <exclude reference="H5F-Vz-wQd"/>
                                             <exclude reference="RN1-JG-9Qx"/>
                                             <exclude reference="SN7-5y-961"/>
@@ -1360,9 +1345,6 @@
                                             <include reference="uWu-gc-4qD"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="3B3-pB-sfv"/>
-                                            <include reference="RbD-Vn-oxI"/>
-                                            <include reference="l6W-cj-yg4"/>
                                             <include reference="2rD-lT-aa3"/>
                                             <include reference="HTh-MQ-eXd"/>
                                             <exclude reference="KgH-QY-eKi"/>
@@ -1374,6 +1356,9 @@
                                             <include reference="UZa-6B-eeK"/>
                                             <exclude reference="XwO-B2-2kF"/>
                                             <include reference="ZDi-6j-Ve9"/>
+                                            <include reference="3B3-pB-sfv"/>
+                                            <include reference="RbD-Vn-oxI"/>
+                                            <include reference="l6W-cj-yg4"/>
                                             <include reference="H5F-Vz-wQd"/>
                                             <include reference="RN1-JG-9Qx"/>
                                             <exclude reference="SN7-5y-961"/>
@@ -3046,7 +3031,7 @@
                                     <action selector="login:" destination="sO4-wL-9Bg" eventType="touchUpInside" id="Ff9-Wa-2W9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Law &amp; Finances Consulting Group Honduras. Todos los derechos reservados." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9Z-hK-Ffv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Law &amp; Finances Consulting Group Honduras. Todos los derechos reservados." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9Z-hK-Ffv">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="362" id="SBQ-24-EGC"/>
